@@ -1,13 +1,13 @@
-# Wheat Seeds Clustering: Finding Varieties Without Labels
+# Wheat Seeds Clustering
 
-Final project (Option 3) for the course *Machine Learning with Python*.
+Final project (Option 3) for the course *Machine Learning with Python_LEAP*.
 
 This project asks how much of the real variety structure in a set of wheat kernels can be recovered with unsupervised learning alone. The kernels are clustered with K-Means on seven geometric measurements, and the true varieties are used only at the end as an answer key.
 
 | | |
 |---|---|
 | **Notebook** | [`Seeds_Clustering.ipynb`](Seeds_Clustering.ipynb) (all cells run, outputs visible) |
-| **HTML export** | [`Seeds_Clustering.html`](Seeds_Clustering.html) (download and open in a browser) |
+| **HTML export** | [`Seeds_Clustering.html`](Seeds_Clustering.html)  |
 | **Main result** | k = 3 clusters, purity **0.919** (193 of 210 kernels matched) |
 
 ## 1. Problem statement
@@ -95,18 +95,15 @@ Rosa kernels are the largest on every size measure. Canadian kernels are the sma
 
 ## 6. Reflection
 
-*(Draft: rewrite this section in your own words before submitting.)*
+**What worked well.** Standardising the features and following the order of the workflow (explore, choose k, cluster, then compare with the labels etc.) kept the evaluation valid. Setting the labels aside until the end meant the choice of k could not be tuned to match the answer. The side-by-side PCA plot with the mismatched kernels circled made the result much easier to explain than the numbers alone.
 
-**What worked well.** Standardising the features and following the order of the workflow (explore, choose k, cluster, then compare with the labels) kept the evaluation honest. Setting the labels aside until the end meant the choice of k could not be tuned to match the answer. The side-by-side PCA plot with the mismatched kernels circled made the result much easier to explain than the numbers alone.
+**What was difficult.** Deciding between the elbow and the silhouette required looking at several pieces of evidence together. It was also tempting to read the PCA plot as if it showed the full clustering, when it is only a projection. Also not much time available.
 
-**What was difficult.** The elbow and the silhouette pointed to different values of k, and neither gave a definitive answer. Deciding between them required looking at several pieces of evidence together. It was also tempting to read the PCA plot as if it showed the full clustering, when it is only a projection.
+**What could be improved.** 
 
-**What could be improved.** With more time I would:
-
-- compare K-Means with other methods such as a Gaussian mixture model or hierarchical clustering, which can handle groups that are not round;
-- use measures that do not depend on k in the same way as purity, such as the adjusted Rand index;
+- compare K-Means with other methods such as a Gaussian mixture model or hierarchical clustering;
 - check the stability of the clusters by refitting on bootstrap samples or with different random seeds;
-- test whether a smaller set of features (for example area, compactness and asymmetry) gives the same separation, which would make sorting cheaper for the co-op.
+- test whether a smaller set of features  gives the same separation, which would make sorting cheaper for the co-op.
 
 ## How to run
 
