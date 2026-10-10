@@ -6,8 +6,8 @@ This project asks how much of the real variety structure in a set of wheat kerne
 
 | | |
 |---|---|
-| **Notebook** | [`Seeds_Clustering.ipynb`](Seeds_Clustering.ipynb) (all cells run, outputs visible) |
-| **HTML export** | [`Seeds_Clustering.html`](Seeds_Clustering.html) (download and open in a browser) |
+| **Notebook** | [`Seeds_Clustering.ipynb`](Seeds_Clustering.ipynb)  |
+| **HTML export** | [`Seeds_Clustering.html`](Seeds_Clustering.html)  |
 | **Main result** | k = 3 clusters, purity **0.919** (193 of 210 kernels matched) |
 
 ## 1. Problem statement
@@ -99,11 +99,9 @@ Rosa kernels are the largest on every size measure. Canadian kernels are the sma
 
 **What was difficult.** The elbow and the silhouette pointed to different values of k. Deciding between them required looking at several pieces of evidence together. It was also tempting to read the PCA plot as if it showed the full clustering, when it is only a projection.
 
-**What could be improved.** With more time I would:
-
-- compare K-Means with other methods such as a Gaussian mixture model or hierarchical clustering, which can handle groups that are not round;
+**What could be improved.** 
+- compare K-Means with other methods such as a Gaussian mixture model;
 - use measures that do not depend on k in the same way as purity, such as the adjusted Rand index;
-- check the stability of the clusters by refitting on bootstrap samples or with different random seeds;
 - test whether a smaller set of features gives the same separation, which would make sorting cheaper for the co-op.
 
 ## How to run
